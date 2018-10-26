@@ -3,6 +3,7 @@ package com.wojtek.Service;
 import com.wojtek.Dao.StudentDao;
 import com.wojtek.Entity.Student;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 
 
@@ -13,6 +14,7 @@ import java.util.Collection;
 public class StudentsService {
 
     @Autowired
+    @Qualifier("mongoData")
     private StudentDao studentDao;
 
     public Collection<Student> getAllStudents(){
